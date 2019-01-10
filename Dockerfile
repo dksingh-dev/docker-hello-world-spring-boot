@@ -2,13 +2,16 @@
 FROM openjdk:8-jdk-alpine
 
 #maintainer 
-MAINTAINER dstar55@yahoo.com
+MAINTAINER dksingh.dev@gmail.com
+
+#WORKDIR /Users/dsingh/dk/docker/aws-eks/docker-hello-world-spring-boot
 
 #expose port 8080
-EXPOSE 8080
+EXPOSE 3000
+
 
 #default command
-CMD java -jar /data/hello-world-0.1.0.jar
+CMD java -jar hello-world-0.1.0.jar
 
 #copy hello world to docker image
-ADD ./data/hello-world-0.1.0.jar /data/hello-world-0.1.0.jar
+ADD dks/hello-world-0.1.0.jar hello-world-0.1.0.jar

@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dk-hello-world
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 3001
+  selector:
+    app: dk-hello-world
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dk-hello-world
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 2
+      maxSurge: 2
+  selector:
+    matchLabels:
+      app: dk-hello-world
+  template:
+    metadata:
+      labels:
+        app: hello-k8s
+    spec:
+      containers:
+        - name: dk-hello-world
+          image: CONTAINER_IMAGE
+          securityContext:
+            privileged: false
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+          ports:
+            - containerPort: 3001
+
