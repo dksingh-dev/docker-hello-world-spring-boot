@@ -27,7 +27,7 @@ spec:
   template:
     metadata:
       labels:
-        app: hello-k8s
+        app: dk-hello-world
     spec:
       containers:
         - name: dk-hello-world
