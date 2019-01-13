@@ -6,7 +6,7 @@ spec:
   type: LoadBalancer
   ports:
     - port: 80
-      targetPort: 3001
+      targetPort: 3000
   selector:
     app: dk-hello-world
 ---
@@ -37,5 +37,5 @@ spec:
             readOnlyRootFilesystem: true
             allowPrivilegeEscalation: false
           ports:
-            - containerPort: 3001
+            - containerPort: 3000
 

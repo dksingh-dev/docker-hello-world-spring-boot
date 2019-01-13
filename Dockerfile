@@ -9,7 +9,7 @@ MAINTAINER dksingh.dev@gmail.com
 #WORKDIR /Users/dsingh/dk/docker/aws-eks/docker-hello-world-spring-boot
 
 #expose port 8080
-EXPOSE 3001
+EXPOSE 3000
 
 
 #default command
