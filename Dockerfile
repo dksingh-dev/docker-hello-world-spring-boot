@@ -1,6 +1,8 @@
 #pull base image
 FROM openjdk:8-jdk-alpine
 
+VOLUME /tmp
+
 #maintainer 
 MAINTAINER dksingh.dev@gmail.com
 
