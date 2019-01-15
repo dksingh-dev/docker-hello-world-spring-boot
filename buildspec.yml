@@ -16,6 +16,7 @@ phases:
         - export KUBECONFIG=$HOME/.kube/config
   build:
     commands:
+      - mvn install
       - mvn test
       - docker build --tag $REPOSITORY_URI:$TAG .
 
