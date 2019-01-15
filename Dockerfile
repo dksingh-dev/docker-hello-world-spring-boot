@@ -16,6 +16,6 @@ EXPOSE 3000
 #CMD java -jar hello-world-0.1.0.jar
 
 #copy hello world to docker image
-ADD dks/hello-world-0.1.0.jar hello-world-0.1.0.jar
+ADD target/hello-world-0.1.0.jar hello-world-0.1.0.jar
 
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","hello-world-0.1.0.jar"]
