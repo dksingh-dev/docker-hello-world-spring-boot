@@ -9,7 +9,8 @@ public class HelloController {
     
     @RequestMapping("/")
     public String index() {
-        return "Hello World From \n";
+    	    String prefix = System.getenv().getOrDefault("my.message", "Hi");
+        return "Hello World From \n" + prefix;
     }
     
 }
