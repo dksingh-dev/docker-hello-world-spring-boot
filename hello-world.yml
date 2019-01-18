@@ -32,10 +32,16 @@ spec:
       containers:
         - name: dk-hello-world
           image: CONTAINER_IMAGE
+          command: [ "/bin/sh", "-c", "env" ]
+          env:
+           - name: SPECIAL_LEVEL_KEY
+             valueFrom: 
+              configMapKeyRef:
+               name: dk-hello-world-config-2
+               key: my.message
           securityContext:
             privileged: false
             readOnlyRootFilesystem: true
             allowPrivilegeEscalation: false
           ports:
             - containerPort: 3000
-
