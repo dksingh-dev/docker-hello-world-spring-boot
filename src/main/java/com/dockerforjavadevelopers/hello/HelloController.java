@@ -10,7 +10,7 @@ public class HelloController {
     
     @RequestMapping("/")
     public String index() {
-    	    String prefix = System.getenv().getOrDefault("my.message", "Hi");
+    	    String prefix = System.getenv().getOrDefault("SPECIAL_LEVEL_KEY", "Hi");
         return "Hello World From \n" + prefix;
     }
     
