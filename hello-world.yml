@@ -32,7 +32,6 @@ spec:
       containers:
         - name: dk-hello-world
           image: CONTAINER_IMAGE
-          command: [ "/bin/sh", "-c", "env" ]
           env:
            - name: SPECIAL_LEVEL_KEY
              valueFrom: 
